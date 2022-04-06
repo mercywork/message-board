@@ -1,0 +1,30 @@
+.header {
+    background-color: black;
+    height: 50px;
+}
+
+.header-logo {
+    color: white;
+    font-size: 30px;
+    margin-left: 10px;
+    hover color= white;    
+    
+}
+
+.header-list {
+    float: right;
+    font-size: 20px;
+    color: white;
+    margin-right: 10px;
+    margin-top: 12px;
+}
+
+li {
+    list-style: none;
+    
+}
+
+a.header-logo:hover{
+    color: white;
+    font-weight: bold
+}
