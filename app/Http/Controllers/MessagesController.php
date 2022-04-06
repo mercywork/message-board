@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Message;
+
 class MessagesController extends Controller
 {
     /**
@@ -13,7 +15,13 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        //
+        // メッセージ一覧を取得
+        $messages = Message::all();
+
+        // メッセージ一覧ビューでそれを表示
+        return view('messages.index', [
+            'messages' => $messages,
+        ]);
     }
 
     /**
