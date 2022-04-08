@@ -28,3 +28,8 @@ a.header-logo:hover{
     color: white;
     font-weight: bold
 }
+
+h1.index {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
