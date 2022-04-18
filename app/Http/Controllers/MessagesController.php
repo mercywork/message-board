@@ -46,7 +46,13 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
-       
+        // メッセージを作成
+        $message = new Message;
+        $message->content = $request->content;
+        $message->save();
+
+        // トップページへリダイレクトさせる
+        return redirect('/');
     }
 
     /**
