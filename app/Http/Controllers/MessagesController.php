@@ -42,6 +42,10 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
+        //バリデーション
+        $request->validate(['content' => 'required|max:255',]);
+
+
         // メッセージを作成
         $message = new Message;
         $message->content = $request->content;
