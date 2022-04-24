@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('css')
+    <link rel="stylesheet" href="/css/create.css">
+@endpush
+
 @section('content')    
 
     <h1 class="create">メッセージ新規作成</h1>

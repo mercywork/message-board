@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('css')
+    <link rel="stylesheet" href="/css/index.css">
+@endpush
+
 @section('content')
 
 <h1 class="index">メッセージ一覧</h1>
@@ -17,8 +21,13 @@
         <tbody>
         @foreach ($messages as $message)
         <tr>
-            <td>{{ $message->id }}</td>
+            
+            <td>{!! link_to_route('messages.show', $message->id, ['message' => $message->id]) !!}</td>
             <td>{{ $message->content }}</td>
+            <td>{!! link_to_route('messages.edit', '編集', ['message' => $message->id], ['class' => 'btn btn-primary']) !!}</td>
+            <td>{!! Form::model($message, ['route' => ['messages.destroy', $message->id], 'method' => 'delete']) !!}
+                {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
+                {!! Form::close() !!}</td>
         </tr>
         @endforeach
         </tbody>

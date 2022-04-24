@@ -7,30 +7,12 @@
         <link rel="stylesheet" href="/css/app.css">       
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
         <title>MessageBoard</title>
+        @stack('css')
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">MessageBoard</a>
-            
-            </div>  
-        
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        @include('commons.navbar')
 
-            
-            <div class="collapse navbar-collapse" id="nav-bar">
-                <ul class="navbar-nav mr-auto"></ul>
-                <ul class="navbar-nav">
-                    {{-- メッセージ作成ページへのリンク --}}
-                    <li class="nav-item">{!! link_to_route('messages.create', '新規メッセージの投稿', [], ['class' => 'nav-link']) !!}</li>
-                </ul>
-            </div>
-        
-
-        </nav>
 
         <div class="container">
             @yield('content')
