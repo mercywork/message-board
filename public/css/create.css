@@ -6,3 +6,7 @@ h1.create {
 .form-group {
     margin-top: 20px;
 }
+
+ul.alert {
+    width:40%;
+}
