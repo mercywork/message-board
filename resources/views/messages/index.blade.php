@@ -14,6 +14,7 @@
         <thead>
         <tr>
             <th>id</th>
+            <th>タイトル</th>
             <th>メッセージ</th>
         </tr>
         </thead>
@@ -23,6 +24,7 @@
         <tr>
             
             <td>{!! link_to_route('messages.show', $message->id, ['message' => $message->id]) !!}</td>
+            <td>{{ $message->title }}</td>
             <td>{{ $message->content }}</td>
             <td>{!! link_to_route('messages.edit', '編集', ['message' => $message->id], ['class' => 'btn btn-primary']) !!}</td>
             <td>{!! Form::model($message, ['route' => ['messages.destroy', $message->id], 'method' => 'delete']) !!}
